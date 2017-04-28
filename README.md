@@ -20,6 +20,11 @@ Next, migrate the database:
 $ rails db:migrate
 ```
 
+Then, seed the database:
+```
+$ rails db:seed
+```
+
 Finally, run the test suite to verify that everything is working correctly:
 
 ```
@@ -33,6 +38,14 @@ $ rails server
 ```
 
 ## TODO
+
+- Add markers when a character is found
+- Add photos of each character to target info box
+- Add a scoring system (timer)
+- Add high scores table
+- Add link from homepage to puzzle
+- Add more puzzles
+- Add styling
 
 Things you may want to cover:
 
