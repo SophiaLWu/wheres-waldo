@@ -1,12 +1,22 @@
 <h1><%= @puzzle.name %></h1>
 
-<%= image_tag @puzzle.image_url, id: "puzzle-image" %>
+<div class="puzzle-image-container">
+  <%= image_tag @puzzle.image_url, id: "puzzle-image" %>
 
-<div class="target-box"></div>
-<div class="target-choices">
-  <h3>Who did you find?</h3>
-  <ul>
-    <li>Waldo</li>
-    <li>Odlaw</li>
-  </ul>
+  <div class="target-box"></div>
+  <div class="target-choices">
+    <h3>Who did you find?</h3>
+    <ul>
+      <% @puzzle.characters.each do |character| %>
+        <li class="character" data-name="<%= character.name%>">
+          <%= character.name %>
+        </li>
+        <%= content_for :head do %>
+          <%= tag :meta, :name => character.name, 
+                         :x_position => character.x_position,
+                         :y_position => character.y_position %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
 </div>

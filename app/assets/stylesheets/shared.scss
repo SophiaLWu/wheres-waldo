@@ -9,3 +9,7 @@
 *:before {
   @include box-sizing(border-box);
 }
+
+body {
+  text-align: center;
+}
