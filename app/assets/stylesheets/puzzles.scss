@@ -1,3 +1,16 @@
-// Place all the styles related to the Puzzles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.target-box {
+  position: absolute;
+  visibility: hidden;
+  width: 70px;
+  height: 120px;
+  border: 2px solid #000;
+  background:rgba(255,255,255,0.5);
+}
+
+.target-choices {
+  position: absolute;
+  display: inline-block;
+  visibility: hidden;
+  width: 200px;
+  background: #fff;
+}
