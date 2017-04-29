@@ -39,8 +39,7 @@ $ rails server
 
 ## TODO
 
-- Add markers when a character is found
-- Add photos of each character to target info box
+- Add game win determination
 - Add a scoring system (timer)
 - Add high scores table
 - Add link from homepage to puzzle

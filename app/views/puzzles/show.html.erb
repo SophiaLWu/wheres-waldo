@@ -4,7 +4,7 @@
   <div class="target-box"></div>
   <div class="target-choices">
     <div class="choice-title"><h3>Who did you find?</h3></div>
-    <ul>
+    <ul class="target-choices-list">
       <% @puzzle.characters.each do |character| %>
         <li class="character" data-name="<%= character.name %>">
           <div class="character-name"><%= character.name %></div>
@@ -13,11 +13,11 @@
                                                   id: character.name %></div>
         </li>
         <%= content_for :head do %>
-          <%= tag :meta, :name => character.name, 
+          <%= tag :meta, :name => character.name,
+                         :id => character.id, 
                          :x_position => character.x_position,
                          :y_position => character.y_position %>
         <% end %>
       <% end %>
     </ul>
-  </div>
 </div>
