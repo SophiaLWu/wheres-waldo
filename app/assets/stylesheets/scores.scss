@@ -1,3 +1,5 @@
+@import "utilities/variables";
+
 #score-form-container {
   position: absolute;
   top: 50%;
@@ -35,10 +37,12 @@
   border-collapse: separate;
   border-spacing: 40px 20px;
   box-shadow: 2px 2px 2px black;
+  background: $red-color;
+  color: #fff;
   font-size: 20px;
 
   th {
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid #fff;
     font-size: 24px;
     font-weight: bold;
   }

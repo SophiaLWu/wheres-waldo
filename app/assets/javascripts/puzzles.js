@@ -12,6 +12,8 @@ $(".puzzles-show").ready(function() {
     $(".target-box").css("visibility", "hidden");
   };
 
+  var getPositionOf
+
   // Adds or hides target box/choices when user clicks on photo
   var photoOnClick = function() {
     $("#puzzle-image").on("click", function(e) {
@@ -26,7 +28,7 @@ $(".puzzles-show").ready(function() {
                                             top: mouseY - target_box_height/2 
                                                  + "px",
                                            left: mouseX + target_box_width/2 
-                                                 + "px" });
+                                                 + 2 + "px" });
           $(".target-box").css({ visibility: "visible",
                                         top: mouseY - target_box_height/2 
                                              + "px",
@@ -121,7 +123,7 @@ $(".puzzles-show").ready(function() {
   var timer = function() {
     setTimeout(function() {
       score += 1;
-      if ($("#score-form-container").length < 1) {
+      if ($("#score-form-container").length < 1 && score < 10000) {
         $(".time").text(score);
       } else {
         clearInterval(timer);
