@@ -24,6 +24,7 @@ $(".puzzles-show").ready(function() {
         else {
           mouseX = e.pageX - $('#puzzle-image').offset().left;
           mouseY = e.pageY - $('#puzzle-image').offset().top;
+          console.log(mouseX, mouseY);
           $(".target-choices").css({ visibility: "visible",
                                             top: mouseY - target_box_height/2 
                                                  + "px",
