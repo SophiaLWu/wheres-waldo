@@ -1,5 +1,29 @@
 $box-width: 50px;
 
+header > * {
+  display: inline-block;
+  margin: 10px 0;
+  text-align: left;
+  font-size: 16px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.time-container {
+  width: 75px;
+  margin-left: 500px;
+}
+
+.time-container > * {
+  display: inline-block;
+}
+
+.time {
+  float: right;
+}
+
 .puzzle-image-container {
   position: relative;
   display: inline-block;

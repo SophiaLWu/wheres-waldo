@@ -1,4 +1,10 @@
-<div class="time"></div>
+<header>
+  <div class="title"><%= @puzzle.name %></div>
+  <div class="time-container">
+    <div class="time-header">Time: </div>
+    <div class="time"></div>
+  </div>
+</header> 
 <div class="puzzle-image-container">
   <%= image_tag @puzzle.image_url, id: "puzzle-image" %>
 
