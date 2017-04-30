@@ -3,7 +3,7 @@
 .puzzle-image-thumb {
   width: 200px;
   height: auto;
-  border: 2px solid #000;
+  border: 2px solid #fff;
   border-radius: 5px;
 }
 
@@ -29,6 +29,10 @@
   a,
   a:visited {
     color: #fff;
+  }
+
+  a:hover {
+    color: #d3d3d3;
   }
   
 }
