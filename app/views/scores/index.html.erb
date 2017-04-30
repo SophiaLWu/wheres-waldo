@@ -1,0 +1,22 @@
+<div class="score-title">
+  <h1><%= @puzzle.name %> High Scores</h1>
+</div>
+
+<div class="scores">
+  <table class="scores-list">
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Time (sec)</th>
+    </tr>
+    <% count = 1 %>
+    <% @scores.each do |score| %>
+      <tr>
+        <td><%= count %></td>
+        <td><%= score.name %></td>
+        <td><%= score.score %></td>
+      </tr>
+      <% count += 1 %>
+    <% end %>
+  <table>
+</div>
