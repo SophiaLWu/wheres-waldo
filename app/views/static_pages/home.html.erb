@@ -1,1 +1,14 @@
-<h1>Wheres Waldo?</h1>
+<div class="home-title"><h1>Wheres Waldo?</h1></div>
+
+<div class="puzzle-choices">
+  <h2>Choose a puzzle:</h2>
+  <table class="puzzles-list">
+    <% @puzzles.each do |puzzle| %>
+      <tr>
+        <td><%= link_to puzzle.name, puzzle_path(puzzle.id) %></td>
+        <td><%= image_tag puzzle.image_url, class: "puzzle-image-thumb" %></td>
+        <td><%= link_to "High scores", scores_path(puzzle_id: puzzle.id) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

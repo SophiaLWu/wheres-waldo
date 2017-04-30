@@ -1,5 +1,4 @@
-$(document).ready(function() {
-
+$(".puzzles-show").ready(function() {
   var score = 0;
   var mouseX;
   var mouseY;
@@ -29,7 +28,8 @@ $(document).ready(function() {
                                            left: mouseX + target_box_width/2 
                                                  + "px" });
           $(".target-box").css({ visibility: "visible",
-                                        top: mouseY - target_box_height/2 + "px",
+                                        top: mouseY - target_box_height/2 
+                                             + "px",
                                        left: mouseX - target_box_width/2
                                              + "px" });
         }

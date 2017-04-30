@@ -1,3 +1,24 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.home-title {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.puzzle-image-thumb {
+  width: 100px;
+  height: auto;
+}
+
+.puzzles-list {
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 40px 20px;
+
+  td {
+    vertical-align: middle;
+    font-size: 20px;
+  }
+
+  td:last-child {
+    padding-left: 40px;
+  }
+}

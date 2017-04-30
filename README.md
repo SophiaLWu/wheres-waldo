@@ -39,9 +39,6 @@ $ rails server
 
 ## TODO
 
-- Add game win determination
-- Add a scoring system (timer)
-- Add high scores table
 - Add link from homepage to puzzle
 - Add more puzzles
 - Add styling
