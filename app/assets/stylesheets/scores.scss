@@ -1,0 +1,20 @@
+#score-form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 200px;
+  z-index: 4;
+  margin-top: -100px;
+  margin-left: -200px;
+  padding: 10px;
+  background: #fff;
+}
+
+#score-form-container h2 {
+  margin-bottom: 10px;
+}
+
+#score-form {
+  margin-top: 30px;
+}

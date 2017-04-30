@@ -15,23 +15,23 @@ $box-width: 50px;
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2;
   visibility: hidden;
   width: $box-width;
   height: 80px;
   border: 2px solid #000;
   background:rgba(255,255,255,0.5);
-  z-index: 2;
 }
 
 .target-choices {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2;
   display: inline-block;
   visibility: hidden;
   padding: 5px;
   background: #fff;
-  z-index: 2;
 }
 
 .choices-title {
@@ -81,20 +81,10 @@ $box-width: 50px;
   left: 50%;
   width: 180px;
   height: 50px;
+  z-index: 3;
   margin-top: -25px;
   margin-left: -90px;
   padding: 10px;
   background: #fff;
 }
 
-.win-screen {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  height: 200px;
-  margin-top: -100px;
-  margin-left: -100px;
-  padding: 10px;
-  background: #fff;
-}

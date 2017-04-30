@@ -1,3 +1,4 @@
+<div class="time"></div>
 <div class="puzzle-image-container">
   <%= image_tag @puzzle.image_url, id: "puzzle-image" %>
 
@@ -14,7 +15,7 @@
         </li>
         <%= content_for :head do %>
           <%= tag :meta, :name => character.name,
-                         :id => character.id, 
+                         :puzzle_id => character.puzzle_id, 
                          :x_position => character.x_position,
                          :y_position => character.y_position %>
         <% end %>

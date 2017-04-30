@@ -1,0 +1,13 @@
+<div id="score-form-container">
+  <h2>You won!</h2>
+  <h3>Your time was: <%= @time %></h3>
+  <h3>Add your score to the high scores table.</h3>
+  <%= form_for @score, url: scores_path, html: { method: "post",
+                                                 id: "score-form" } do |f| %>
+    <%= f.label :name, "Your Name: " %>
+    <%= f.text_field :name %>
+    <%= f.hidden_field :score, value: params["score"] %>
+    <%= f.hidden_field :puzzle_id, value: params["puzzle_id"] %>
+    <%= f.submit "Submit" %>
+  <% end %>
+</div>

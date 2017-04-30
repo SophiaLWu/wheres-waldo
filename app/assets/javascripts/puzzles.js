@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var gameover = false;
+  var score = 0;
   var mouseX;
   var mouseY;
   var target_box_width = parseInt($(".target-box").css("width"), 10);
@@ -16,14 +16,13 @@ $(document).ready(function() {
   // Adds or hides target box/choices when user clicks on photo
   var photoOnClick = function() {
     $("#puzzle-image").on("click", function(e) {
-      if (!gameover) {
+      if ($("#score-form-container").length < 1) {
         if ($(".target-box").css("visibility") === "visible") {
           hideTargetInfo();
         }
         else {
           mouseX = e.pageX - $('#puzzle-image').offset().left;
           mouseY = e.pageY - $('#puzzle-image').offset().top;
-          console.log(mouseX, mouseY);
           $(".target-choices").css({ visibility: "visible",
                                             top: mouseY - target_box_height/2 
                                                  + "px",
@@ -64,19 +63,22 @@ $(document).ready(function() {
                                                      // work with classes
     $(".puzzle-image-container").append("<div class='marker' id='" +
                                         name + "-marker'></div>");
-    $("#" + name + "-marker").css({  top: characterPosition[1] - marker_radius + "px" ,
-                                    left: characterPosition[0] - marker_radius + "px" });
-
+    $("#" + name + "-marker").css({  top: characterPosition[1] - marker_radius 
+                                          + "px" ,
+                                    left: characterPosition[0] - marker_radius 
+                                          + "px" });
   };
 
   var informValidityGuess = function(guess) {
     var text = guess ? "Good find!" : "Try again!";
     $("body").append("<div class='validity-info'><h2>" + text + "<h2></div>");
-    $(".validity-info").delay(1000).fadeOut("slow");
+    setTimeout(function() {
+      $(".validity-info").remove()
+    }, 2000);
   };
 
-  // Checks if a guess is correct and adds a marker and removes character
-  // from target choices list if so
+  // Checks if a guess is correct. If correct, adds a marker, removes character
+  // from target choices list, and checks for win
   var checkGuess = function() {
     $(".character").on("click", function() {
       var characterPosition = getCharacterPosition($(this));
@@ -99,13 +101,38 @@ $(document).ready(function() {
   // Checks for win and ends game if so
   var checkWin = function() {
     if ($(".character").length < 1) {
-      gameover = true;
-      $("body").append("<div class='win-screen'><h2>You won!<h2></div>");
+      $.ajax({
+        url: "/scores/new",
+        type: "GET",
+        dataType: "html",
+        data: { score: score, 
+                puzzle_id: $("meta[name='Waldo']").attr("puzzle_id") },
+        success: function(response) {
+          $("body").append(response);
+        },
+        error: function() {
+          alert("Error occured. Please try again");
+        }
+      });
     }
   }
+
+  // Counts the time
+  var timer = function() {
+    setTimeout(function() {
+      score += 1;
+      if ($("#score-form-container").length < 1) {
+        $(".time").text(score);
+      } else {
+        clearInterval(timer);
+      }
+      timer();
+    }, 1000)
+  };
 
   photoOnClick();
   targetInfoOnClick();
   checkGuess();
+  timer();
 
 });
